@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 jobs:
   build:
@@ -13,5 +14,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.4.6
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: 'apollo-app-example'
+          heroku_app_name: 'nodejs-apollo-example'
           heroku_email: 'borolgs@gmail.com'
