@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   res.send({ status: 'UP' });
 });
 
-// app.use('/graphql', protect);
+app.use('/graphql', protect);
 
 app.use(authRouter);
 app.use(errorHandler);

@@ -11,10 +11,11 @@ services:
     ports:
       - 8000:8000
     command: sh -c 'npm i && npm run dev'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
     networks:
       otus-net:
-  mongo-db:
-    container_name: mongo-db
+  mongo:
     image: mongo:latest
     restart: always
     environment:
@@ -23,7 +24,7 @@ services:
     volumes:
       - ../tmp/mongo-db:/data/db
     ports:
-      - 7003:27017
+      - 27017:27017
     networks:
       otus-net:
 networks:
