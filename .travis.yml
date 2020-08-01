@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - 14
+deploy:
+  provider: heroku
+  api_key:
+    secure: fUCJUKvtT18xiiiXnp7vumQ00blXtiK8ezRmBbARy6VvlyrLxvSOLttOPwutbR2MpxXBSNa1wN6VVxqEboUZB4RqUmq2xwJbMmtw7MASpy4aOVCvwkgOO7Us4Br0Okwokc1uzj8SeI4wbEPvFrxmE3Rx9vKQlhqmzOfKYP14GreeD6aNFWUnzr1B+g5ibbaJX/IR1P02Da/KZQCY8Q4sfdn8JlooxVih0pTfsX6xH88c9Kv7uEFBU2mpO4G1zKdqW/ao8NzSm64mZ9W4eOB+fBCcKp1NasmXrI/pU0VfZ1Q+YPKRFZcIiLRBHUuzq83Vhtlmec8XX0+vJQeVHrFKSrASlo4fbIX5pznSboVUZKoPUHyJQIvpZ5e790xsRfUBZDAlbYvPI9JnmBqht7DZEd8sgDiCnF9Xx/1wmQ6vSu2Mqq90VpLCAy//9SMBk2so3lx/F1NoEtjo5rk2xkQnD+qVAUoD4Xr2gDiFtq1ZOIvVyKw8hoY5UMwSvPD3D4S03C5ChwKX3I4N7vRJxiboBYS0ZrD9SltsbwcjH3gdx4fzaGgPoBUPFPdtEt33jnnh/U78Nm32o2DIb+G946RPISe/R8zEed17OTGqAy8mAKV6Uoqg58UnUYX9aws/WwgWO8Ci4dIOBMIcrD4gxyF7mtMG3h0kfFdSL1tEq+6svgA=
+  app: nodejs-apollo-example
+  on:
+    repo: borolgs/nodejs-apollo-example
+    branch: develop
+  skip_cleanup: 'true'
