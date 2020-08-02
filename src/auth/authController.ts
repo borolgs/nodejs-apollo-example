@@ -1,4 +1,3 @@
-import services from '../services';
 import asyncHandler from '../middleware/asyncHandler';
 import { JWT_COOKIE_EXPIRE, MODE } from '../config';
 import { IUser } from '../users/userModel';
@@ -36,33 +35,6 @@ export default class AuthController {
     return sendTokenResponse(user, 200, res);
   });
 }
-
-export const login = asyncHandler(async (req, res, next) => {
-  const { email, password } = req.body;
-
-  const user = await services.usersService.findOneByEmail(email);
-  if (!user) {
-    return next(new AuthError('Invalid credentials'));
-  }
-
-  const isMatch = await user.matchPassword(password);
-
-  if (!isMatch) {
-    return next(new AuthError('Invalid credentials'));
-  }
-  sendTokenResponse(user, 200, res);
-});
-
-export const register = asyncHandler(async (req, res, next) => {
-  let user = await services.usersService.findOneByEmail(req.body.email);
-  if (user) {
-    return next(new AuthError('Email already taken!'));
-  }
-
-  user = await services.usersService.create(req.body);
-
-  return sendTokenResponse(user, 200, res);
-});
 
 const sendTokenResponse = (user: IUser, statusCode: number, res: any) => {
   const token = user.getSignedJwtToken();
