@@ -10,3 +10,11 @@ https://nodejs-apollo-example.herokuapp.com/graphql
 # Usage
 
 `docker-compose up`
+
+or 
+
+1. Create .env file and set MONGO_URI=your/mongo/path  
+2. `npm i`  
+3. `npm run dev`
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/22593136d6ff4d0a0a2a)
